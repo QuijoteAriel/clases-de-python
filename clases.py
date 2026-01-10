@@ -62,5 +62,36 @@ print("La ruta de archivo es: C:\\Users\\Usuario\\Desktop\\archivo.txt")
 print("La ruta de archivo es: /home/user/documentos/archivo.txt")
 
 
+# Clases  y metodos
+
+# listas
+
+to_do = ["hola", 1, False, 5.7, [ 2,3,4,5 ]]  
+numbers = [ 1,2,3,4,5,6,7,8 ]
+# puede contener todos los tipos de datos a la vez incluso puede  contener listas, dicionarios, tuplas , listas de listas, listas de diccionarios
+
+numbers.reverse() # hay que dar la instruccion de reverse(), pop(), sort() etc y luego imprimir
+print(numbers)
+print(to_do) # imprime la lista to_do
+print(to_do[::-1]) # imprime la lista to_do desde el ultimo elemento de la lsta hasta el primero usando slices
+to_do.reverse() # hace que la lista se imprima desde el ultimo elemento al primero
+print(to_do)
+
+del to_do[:2] # puedo borrar todo el elemento o parte de el usando slices [::] 
+print(to_do)
+print(numbers)
+
+# modificar listas 
+
+a = [1,2,3,4,5,]
+b = a
+a.append(6)
+print(id(a))
+print(a)
+print(id(b))
+print(b)
+c = a[:]
+print(id(c))
+print(c)
 
 
