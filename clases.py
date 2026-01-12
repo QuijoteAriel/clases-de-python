@@ -1,97 +1,125 @@
-# Manejo de canena de caracteres
- 
-# Se puee manipular las cadenas de caracteres de mchas formas, una de ella es llamando a caracteres especificos como :
+# -*- coding: utf-8 -*- 
+
+# -----------------------------------------------------------------------------
+# NOTAS DE CLASE DE PYTHON
+# 
+# Este script contiene notas y ejemplos de código de conceptos básicos de Python.
+# Ha sido refactorizado para mejorar la legibilidad y corregir errores.
+# -----------------------------------------------------------------------------
+
+
+# -----------------------------------------------------------------------------
+# 1. Manejo de cadenas de caracteres (Strings)
+# -----------------------------------------------------------------------------
+
+# Las cadenas de caracteres se pueden manipular de muchas formas.
+# Una de ellas es accediendo a caracteres específicos mediante su índice.
 
 name = 'jose'
-print(name[0])  # llama al caracter en la pocicion 1 que seria la 'o' ya que python cuenta desde el cero y no desde el 1
-print(name[1])  
-print(name[2]) 
-print(name[3])
 
-print(name[::-1]) # imprime de atras hasta a delante
+# Acceso a caracteres por índice. Python cuenta los índices desde 0.
+print(name[0])  # Imprime el carácter en la posición 0, que es la 'j'.
+print(name[1])  # Imprime el carácter en la posición 1, que es la 'o'.
+print(name[2])  # Imprime el carácter en la posición 2, que es la 's'.
+print(name[3])  # Imprime el carácter en la posición 3, que es la 'e'.
 
-print("hola  \"como \" , estas ? ") # imprime las comillas dobles como parte del print sin afectar a las comillas que rodean al mismo print
+# Slicing para invertir una cadena.
+print(name[::-1])  # Imprime la cadena en orden inverso: 'esoj'.
 
-# tambien se puedes ordenar y dividir las cadenas de otras formas, cambiar el formato y reorganizar los caracteres
+# Para incluir comillas dobles dentro de una cadena, se pueden escapar con \".
+print("hola \"como\" estas?")
 
-print(name.upper()) # escribe en mayusculas
-print(name.title()) # escribe el modo titulo
-print(name.strip()) # elimina los espacion de adelante a atras de la caneda
-print(len(name)) # escibe el numero de largo  de la cadena
-
-
- 
-# TIPOS DE DATOS 
-
-x = 10 
-print(type(x))  # escribe el tipo de dato ya sea 'ini' , 'str', 'float', o 'bool' pero no el dato en si
+# Python ofrece varios métodos para transformar cadenas.
+print(name.upper())    # Convierte toda la cadena a mayúsculas: 'JOSE'.
+print(name.title())    # Pone en mayúscula la primera letra: 'Jose'.
+print("  texto  ".strip()) # Elimina espacios en blanco al inicio y al final.
+print(len(name))       # Devuelve la longitud de la cadena: 4.
 
 
-print(True == 1) # por astrabcion True es igual a uno
+# -----------------------------------------------------------------------------
+# 2. Tipos de datos y la función print()
+# -----------------------------------------------------------------------------
 
+# La función type() devuelve el tipo de un dato.
+x = 10
+print(type(x))  # Imprime el tipo de la variable x: <class 'int'>.
 
-print(False == 0) # por lo tanto False es igual a cero 
+# En Python, True se evalúa como 1 y False como 0 en contextos numéricos.
+print(True == 1)   # Esto imprimirá True.
+print(False == 0)  # Esto también imprimirá True.
 
+# La función print() puede tomar múltiples argumentos.
+# Por defecto, los separa con un espacio.
+print("nunca", "pares", "de", "aprender")
 
-print("nunca","pares","de","aprender")  # separado por comas se hace un espacio 
-print("nunca" + "pares" + "de" + "aprender") # no se hace espacio en blanco 
+# El operador '+' concatena las cadenas sin añadir espacios.
+print("nunca" + "pares" + "de" + "aprender")
 
+# Se puede especificar un separador personalizado con el argumento `sep`.
+print("nunca", "pares", "de", "aprender", sep="; ")
 
-# Uso de sep, permite especificar como separar los elementos al imprimir
-
-
-print("nunca","pares","de","aprender", sep="; ")  
-
-# uso de end, los que este dentro de las  comillas del end afecta al print, si hay "\n" sera un salto de linea , si hay espacios en blanco esos espacios se imprimiran tambien  
-
+# El argumento `end` define qué se imprime al final. Por defecto es un salto de línea ('\n').
 print("Nunca", end=" ")
-print("pares de aprender")
+print("pares de aprender")  # Esta línea continuará en la misma línea que la anterior.
+
+# El carácter '\n' en una cadena representa un salto de línea.
 print("Hola\nmundo")
 print("jose\nluis\nflores")
 
-# Impresion con formato especifico 
-
-# Puedes controlar el formato de los números al imprimir. En este ejemplo, :.2f indica que el número debe mostrarse con dos decimales. Así, imprimirá “Valor: 3.14”, redondeando el número a dos decimales. Esto es especialmente útil cuando trabajas con datos numéricos y necesitas un formato específico.
-
+# Impresión con formato específico usando f-strings (método moderno).
 valor = 3.14159
-print("Valor: {:.4f}".format(valor))
+print(f"Valor: {valor:.2f}") # Formatea el número a dos decimales: "Valor: 3.14"
 
-# Para imprimir rutas de windows se necesita tambien la ruta de escape 
+# Impresión con formato usando el método format().
+print("Valor: {:.4f}".format(valor)) # Formatea a cuatro decimales: "Valor: 3.1416"
 
-print("La ruta de archivo es: C:\\Users\\Usuario\\Desktop\\archivo.txt")
-print("La ruta de archivo es: /home/user/documentos/archivo.txt")
+# Para imprimir rutas de archivos en Windows, es necesario escapar la barra invertida '\\'.
+print("Ruta en Windows: C:\\Users\\Usuario\\Desktop\\archivo.txt")
+# En sistemas tipo Unix (Linux, macOS), no es necesario.
+print("Ruta en Unix/Linux: /home/user/documentos/archivo.txt")
 
 
-# Clases  y metodos
+# -----------------------------------------------------------------------------
+# 3. Listas
+# -----------------------------------------------------------------------------
 
-# listas
+# Las listas son colecciones ordenadas y mutables.
+# Pueden contener diferentes tipos de datos.
+to_do = ["Estudiar Python", 1, False, 5.7, ["A", "B"]]
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 
-to_do = ["hola", 1, False, 5.7, [ 2,3,4,5 ]]  
-numbers = [ 1,2,3,4,5,6,7,8 ]
-# puede contener todos los tipos de datos a la vez incluso puede  contener listas, dicionarios, tuplas , listas de listas, listas de diccionarios
-
-numbers.reverse() # hay que dar la instruccion de reverse(), pop(), sort() etc y luego imprimir
-print(numbers)
-print(to_do) # imprime la lista to_do
-print(to_do[::-1]) # imprime la lista to_do desde el ultimo elemento de la lsta hasta el primero usando slices
-to_do.reverse() # hace que la lista se imprima desde el ultimo elemento al primero
+# Imprimir una lista completa.
 print(to_do)
 
-del to_do[:2] # puedo borrar todo el elemento o parte de el usando slices [::] 
-print(to_do)
+# Métodos que modifican la lista in-place (no devuelven una nueva lista).
+numbers.reverse()  # Invierte el orden de los elementos en la lista.
 print(numbers)
 
-# modificar listas 
+# Slicing para invertir una lista (crea una copia invertida).
+print(to_do[::-1])
 
-a = [1,2,3,4,5,]
+# La lista original no se modifica con el slicing.
+print(to_do)
+
+# `del` puede eliminar elementos de una lista por su índice o por un slice.
+del to_do[:2]  # Elimina los dos primeros elementos: "Estudiar Python" y 1.
+print(to_do)
+
+
+# --- Modificación de listas y referencias ---
+
+a = [1, 2, 3, 4, 5]
+
+# Asignación de referencia: 'b' apunta al mismo objeto en memoria que 'a'.
 b = a
-a.append(6)
-print(id(a))
-print(a)
-print(id(b))
-print(b)
-c = a[:]
-print(id(c))
-print(c)
+a.append(6)  # Cualquier cambio en 'a' se reflejará en 'b'.
 
+print(f"ID de a: {id(a)}, Contenido de a: {a}")
+print(f"ID de b: {id(b)}, Contenido de b: {b}") # Mismo ID y contenido que 'a'
 
+# Creación de una copia superficial (shallow copy): 'c' es un nuevo objeto.
+c = a[:] # El slicing [:] crea una copia de la lista.
+c.append(7) # Los cambios en 'c' no afectan a 'a'.
+
+print(f"ID de c: {id(c)}, Contenido de c: {c}") # ID diferente, contenido diferente.
+print(f"Contenido de a no ha cambiado: {a}")
