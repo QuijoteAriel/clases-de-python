@@ -123,3 +123,23 @@ c.append(7) # Los cambios en 'c' no afectan a 'a'.
 
 print(f"ID de c: {id(c)}, Contenido de c: {c}") # ID diferente, contenido diferente.
 print(f"Contenido de a no ha cambiado: {a}")
+
+# --- Listas de listas o Matrices
+
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+print(matrix)
+print(matrix[0][1]) # imprime el 2
+print(matrix[1][1]) # imprime el 5
+
+# Accedo a las capas de cada lista con [][] donde el primer corchere es la primera capa de la lista 
+
+print(matrix[1][2],matrix[1][0]) # imprime  6 4
+
+
+
+
+
+
