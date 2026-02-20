@@ -16,8 +16,10 @@ for i in asignaturas:
 
 
 for i in asignaturas:
-    notas = input("cuanta nota sacaste en : ", i )
-    print('En ', i, 'Sacaste ',notas)
+    n = int(input("cuanta nota sacaste en : "+ i + " " ))
+    ns.append(n)
+for j in range(len(asignaturas)):
+    print('En '+ asignaturas[j] + ' Sacaste ' + ns[j])
 
 
 
